@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* This ensures padding and border are included in width/height calculations */
+}
+
+body {
+     background: linear-gradient(to right ,#A3D9BA,#F5E5C2 ); 
+ 
+}
+
+#flexcon {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    overflow-x: hidden; 
+}
+
+#block {
+    height: 90vh;
+    width: 20%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: -90px;
+    top: 20px;
+    gap: 5vh;
+}
+
+#maincontainer {
+    height: 65vh;
+    width: 100%;
+    background: #EAF5EE;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#maincontainer input,
+#maincontainer select {
+    height: 20px;
+    width: 80%;
+    border-radius: 20px;
+    border: 1px solid black;
+    text-align: center;
+  
+}
+
+#maincontainer select {
+    border: transparent; border: 1px solid black;
+}
+
+#maincontainer label {
+    color: #14BD6B;
+    font-weight: 666;
+    margin-bottom: 8px; 
+}
+
+#maincontainer h3 {
+    position: relative;
+    top: -40px;
+    color: #14BD6B;
+}
+
+#sariname{
+    position: absolute;
+    left: 40px;
+    top: 30px;
+}
+#smallcon {
+    height: 20vh;
+    width: 100%;
+    background: red;
+    border-radius: 25px;
+}
+
+#maincontainer2 {
+    height: 400px;
+    width: 60%;
+    background: #000;
+    margin-top: 20px; /* Added margin-top for spacing */
+}

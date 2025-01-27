@@ -155,3 +155,26 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   .metrics a:hover {
     text-decoration: underline;
   }
+
+
+/* show fit  */
+.days-to-fit {
+    background: #f9f9f9;
+    border: 2px solid #dedede;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .days-to-fit p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .days-to-fit h3 {
+    font-size: 2rem;
+    color: #333;
+    margin: 10px 0;
+  }
+  

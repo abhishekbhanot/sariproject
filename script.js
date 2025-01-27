@@ -94,3 +94,36 @@ function updateTargetWeight() {
   // Initial call to update the content on page load
   updateTargetWeight();
   
+
+
+
+
+  function calculateDaysToFit() {
+    const weight = parseFloat(document.getElementById('weight').value);
+    const height = parseFloat(document.getElementById('height').value);
+    const activityLevel = parseInt(document.getElementById('activity').value);
+  
+    // Calculate Super Fit weight
+    const heightMeters = height * 0.3048; // Convert height from feet to meters
+    const superFitWeight = 22 * (heightMeters ** 2); // Super Fit weight in kg
+  
+    // Current weight and daily caloric deficit based on activity
+    const dailyDeficit = [300, 400, 500, 600][activityLevel]; // Approximate values
+    const weightToLose = weight - superFitWeight; // Weight to lose in kg
+  
+    // Approximate days to lose weight (1 kg ~ 7700 kcal deficit)
+    const daysToFit = weightToLose > 0 ? Math.ceil((weightToLose * 7700) / dailyDeficit) : 0;
+  
+    // Update the display
+    const daysDisplay = document.getElementById('days-to-fit');
+    daysDisplay.textContent = daysToFit > 0 ? daysToFit : "You're already Super Fit!";
+  }
+  
+  // Attach event listeners to update days-to-fit dynamically
+  document.getElementById('weight').addEventListener('input', calculateDaysToFit);
+  document.getElementById('height').addEventListener('input', calculateDaysToFit);
+  document.getElementById('activity').addEventListener('input', calculateDaysToFit);
+  
+  // Initial calculation
+  calculateDaysToFit();
+  

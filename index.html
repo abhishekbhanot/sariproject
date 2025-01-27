@@ -1,73 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sari Project</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sari Vitals</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 id="sariname">sari vitals</h1><br>
-    <div id="flexcon"><br>
-        <div id="block">
-    <div id="maincontainer">
-        <h3>Know your vitals in 2 minutes</h3>
-        <label>height(In Cms)</label>
-        <input type="text" placeholder="165cm"/><br>
-        
-        <label>weight(In Kgs)</label>
-        <input type="text" placeholder="65kgs"/><br>
+  <h2>Sari Vitals</h2><br>
+  <div class="card">
+    <p>Know your vitals in 2 minutes!</p>
 
-        <label>date of birth</label>
-        <input type="date"/><br>
-
-        <label>gender</label>
-        <select name="select level" id="">
-            <option value="">Male</option>
-            <option value="">Female</option>
-            <option value="">Others </option>
-        </select><br>
-        <label> select activity level</label>
-        <select name="select level" id="">
-            <option value="">less active</option>
-            <option value="">Moderate</option>
-            <option value="">highly active</option>
-        </select>
-        <button id="submit">Calculate</button>
-         
-</div>
-
-    <div id="smallcon">
-<h3>whats your target weight</h3>
-<input type="text" placeholder="Target weight"/>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui dignissimos </p>
-
-    </div>
- </div>
-
-    <!-- main 2div -->
-
- <div id="maincontainer2">
-<div id="smalltwo">
-    <div id="smalltwo1"></div>
-    <div id="smalltwo2"></div>
-    <div id="smalltwo3"></div>
-    <div id="smalltwo4"></div>
-
-    
-</div>
-
-
-
-
+    <!-- Name Input -->
+    <div class="input-container">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" oninput="updateName()">
     </div>
 
+    <div class="slider-container">
+      <label for="height">Height: <span id="height-value">5.6</span> ft</label>
+      <input type="range" id="height" class="styled-range" min="4" max="7" step="0.1" value="5.6" oninput="updateValue('height')">
+    </div>
 
-</div>
+    <div class="slider-container">
+      <label for="weight">Weight: <span id="weight-value">75.3</span> kg</label>
+      <input type="range" id="weight" class="styled-range" min="30" max="150" step="0.1" value="75.3" oninput="updateValue('weight')">
+    </div>
 
+    <div class="input-container">
+      <label>Date of Birth: <span id="dob-display">03 / 01 / 2001</span></label>
+      <div class="dob-sliders">
+        <div>
+          <input type="range" id="dob-day" class="styled-range" min="1" max="31" value="3" oninput="updateDOB()">
+          <label for="dob-day">Day</label>
+        </div>
+        <div>
+          <input type="range" id="dob-month" class="styled-range" min="1" max="12" value="1" oninput="updateDOB()">
+          <label for="dob-month">Month</label>
+        </div>
+        <div>
+          <input type="range" id="dob-year" class="styled-range" min="1925" max="2025" value="2001" oninput="updateDOB()">
+          <label for="dob-year">Year</label>
+        </div>
+      </div>
+    </div>
 
-    
-    
-    <script src="script.js"></script>
+    <div class="slider-container">
+      <label for="gender">Gender: <span id="gender-value">Female</span></label>
+      <input type="range" id="gender" class="styled-range" min="0" max="2" step="1" value="0" oninput="updateGender()">
+    </div>
+
+    <div class="slider-container">
+      <label for="activity">Activity: <span id="activity-value">Less than Moderate</span></label>
+      <input type="range" id="activity" class="styled-range" min="0" max="3" step="1" value="1" oninput="updateActivity()">
+    </div>
+
+    <div class="target-weight">
+      <p>Maya, what's your target weight?</p>
+      <h3>58kg - Super Fit</h3>
+      <p>Sari Vi gives you a healthy journey to reach your target. Kindly be patient to see the results.</p>
+    </div>
+  </div>
+
+  <div class="card1">
+    <img src="https://img.lovepik.com/free-png/20210918/lovepik-cartoon-girl-png-image_400179966_wh1200.png" alt="Maya" class="avatar">
+    <h2 id="display-name">Maya</h2>
+    <p>Age: <span id="display-age">23</span></p>
+    <p class="status" id="health-status">Not Healthy</p>
+    <p class="message">
+      Don't worry, <span id="display-name-inline">Maya</span>, I will help you. First let me show you where things are wrong.
+    </p>
+    <div class="metrics">
+      <p>Your <b>BMI</b> <span>29</span></p>
+      <a href="#">learn BMI in 30 sec</a>
+      <p>Your <b>BMR</b> <span>1800</span></p>
+      <a href="#">learn BMR in 30 sec</a>
+      <p>Your <b>TDEE</b> <span>1500</span></p>
+      <a href="#">learn TDEE in 30 sec</a>
+    </div>
+  </div>
 </body>
+<script src="script.js"></script>
 </html>

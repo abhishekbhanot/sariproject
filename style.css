@@ -31,7 +31,7 @@ body {
   .styled-range {
 -webkit-appearance: none;
 width: 300px;
-height: 8px;
+height: 8px; 
 background: #5a5560; /* Gray track color */
 border-radius: 5px;
 outline: none;

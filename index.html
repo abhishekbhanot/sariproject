@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Sari Vitals</h2><br>
+ 
+  <div id="flexbox">
+  <div id="block">
   <div class="card">
     <p>Know your vitals in 2 minutes!</p>
 
@@ -68,22 +70,24 @@
 
     </div>
   </div>
-
+</div>
+<!-- seconf div -->
+<div id="flexbox2">
   <div class="card1">
     <img src="https://img.lovepik.com/free-png/20210918/lovepik-cartoon-girl-png-image_400179966_wh1200.png" alt="Maya" class="avatar">
     <h2 id="display-name">Maya</h2>
-    <p>Age: <span id="display-age">23</span></p>
+    <p id="age">Age: <span id="display-age">23</span></p>
     <p class="status" id="health-status">Not Healthy</p>
     <p class="message">
       Don't worry, <span id="display-name-inline">Maya</span>, I will help you. First let me show you where things are wrong.
     </p>
     <div class="metrics">
       <p>Your <b>BMI</b> <span>29</span></p>
-      <a href="#">learn BMI in 30 sec</a>
+    
       <p>Your <b>BMR</b> <span>1800</span></p>
-      <a href="#">learn BMR in 30 sec</a>
+     
       <p>Your <b>TDEE</b> <span>1500</span></p>
-      <a href="#">learn TDEE in 30 sec</a>
+    
     </div>
   </div>
 
@@ -92,7 +96,21 @@
     <h3><span id="days-to-fit">-</span> days</h3>
     <p>to reach your Super Fit weight with consistent effort!</p>
   </div>
+
+  <div class="days-to-fit">
+    <p>It will take approximately:</p>
+    <h3><span id="days-to-fit">-</span> days</h3>
+    <p>to reach your Super Fit weight with consistent effort!</p>
+  </div>
+
+  <div class="card1">
+    <p>It will take approximately:</p>
+    <h3><span id="days-to-fit">-</span> days</h3>
+    <p>to reach your Super Fit weight with consistent effort!</p>
+  </div>
   
+</div>
+</div>
 </body>
 <script src="script.js"></script>
 </html>

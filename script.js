@@ -37,7 +37,7 @@ function calculateVitals() {
   const weight = parseFloat(document.getElementById('weight').value);
   const activityLevel = parseInt(document.getElementById('activity').value);
 //  let agee=document.getElementById('display-age').value;
-  const gender = document.getElementById('gender').value; 
+const gender = genderOptions[parseInt(document.getElementById('gender').value)];
 
 
   const heightMeters = height * 0.3048;
@@ -49,30 +49,28 @@ function calculateVitals() {
    age = today.getFullYear() - dob.getFullYear(); // Calculate initial age difference
   document.getElementById('display-age').innerText =  age ;
     let bmi=(weight / (heightMeters ** 2)).toFixed(1);
- 
-  document.querySelector('.metrics p:nth-child(1) span').textContent = bmi;
- 
-
-  let bmr;
-  if (gender === "Male") {
-    bmr = (10 * weight + 6.25 * heightCm  - 5 * age + 5).toFixed(0);
-  } else {
-    bmr = (10 * weight + 6.25 * heightCm  - 5 * age - 161).toFixed(0);
-  }
-  console.log( bmr) 
-
-  // const activityMultiplier = [1.2, 1.375, 1.55, 1.725];
-  // const tdee = (bmr * activityMultiplier[activityLevel]).toFixed(0);
-
-  document.querySelector('.metrics p:nth-child(2) span').textContent = parseInt(bmr);
-  // document.querySelector('.metrics p:nth-child(3) span').textContent = tdee;
-
-  
-
-  const healthStatus = document.getElementById('health-status');
+    const healthStatus = document.getElementById('health-status');
   healthStatus.textContent = bmi < 18.5 ? "Underweight" :
     bmi < 25 ? "Healthy" :
     bmi < 30 ? "Overweight" : "Not Healthy";
+ 
+  let bmr;
+  if (gender === "Male") {
+    bmr = (10 * weight + 6.25 * heightCm  - 5 * age + 5).toFixed(0);
+  }
+  else {
+    bmr = (10 * weight + 6.25 * heightCm  - 5 * age - 161).toFixed(0);
+  }
+// tdee
+  const activityMultiplier = [1.2, 1.375, 1.55, 1.725];
+  const tdee = (bmr * activityMultiplier[activityLevel]).toFixed(0);
+  document.querySelector('.metrics p:nth-child(1) span').textContent = bmi;
+  document.querySelector('.metrics p:nth-child(2) span').textContent = parseInt(bmr);
+  document.querySelector('.metrics p:nth-child(3) span').textContent = tdee;
+
+  
+
+  
 }
 
 document.querySelectorAll('input[type="range"]').forEach(slider => {

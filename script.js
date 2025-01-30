@@ -1,5 +1,6 @@
 const activityLevels = ["Low", "Less than Moderate", "Moderate", "High"];
 const genderOptions = ["Female", "Male", "Other"];
+let age;
 
 function updateName() {
   const nameInput = document.getElementById('name').value;
@@ -21,13 +22,6 @@ function updateActivity() {
   valueDisplay.textContent = activityLevels[slider.value];
 }
 
-function updateDOB() {
-  const day = document.getElementById('dob-day');
-  const month = document.getElementById('dob-month');
-  const year = document.getElementById('dob-year');
-  const display = document.getElementById('dob-display');
-  display.textContent = `${String(day.value).padStart(2, '0')} / ${String(month.value).padStart(2, '0')} / ${year.value}`;
-}
 
 function updateGender() {
   const slider = document.getElementById('gender');
@@ -36,31 +30,44 @@ function updateGender() {
 }
 
 function calculateVitals() {
+ 
+
+
   const height = parseFloat(document.getElementById('height').value);
   const weight = parseFloat(document.getElementById('weight').value);
   const activityLevel = parseInt(document.getElementById('activity').value);
-  const year = parseInt(document.getElementById('dob-year').value);
-  const age = new Date().getFullYear() - year;
+//  let agee=document.getElementById('display-age').value;
+  const gender = document.getElementById('gender').value; 
+
 
   const heightMeters = height * 0.3048;
-  const bmi = (weight / (heightMeters ** 2)).toFixed(1);
-  const gender = genderOptions[parseInt(document.getElementById('gender').value)];
+  const heightCm=height*30.48;
+  const dobInput = document.getElementById('dob').value; // Get the DOB input value
+  let dob = new Date(dobInput); // Convert input to Date object
+  let today = new Date(); // Get current date
+
+   age = today.getFullYear() - dob.getFullYear(); // Calculate initial age difference
+  document.getElementById('display-age').innerText =  age ;
+    let bmi=(weight / (heightMeters ** 2)).toFixed(1);
+ 
+  document.querySelector('.metrics p:nth-child(1) span').textContent = bmi;
+ 
 
   let bmr;
   if (gender === "Male") {
-    bmr = (10 * weight + 6.25 * heightMeters * 100 - 5 * age + 5).toFixed(0);
+    bmr = (10 * weight + 6.25 * heightCm  - 5 * age + 5).toFixed(0);
   } else {
-    bmr = (10 * weight + 6.25 * heightMeters * 100 - 5 * age - 161).toFixed(0);
+    bmr = (10 * weight + 6.25 * heightCm  - 5 * age - 161).toFixed(0);
   }
+  console.log( bmr) 
 
-  const activityMultiplier = [1.2, 1.375, 1.55, 1.725];
-  const tdee = (bmr * activityMultiplier[activityLevel]).toFixed(0);
+  // const activityMultiplier = [1.2, 1.375, 1.55, 1.725];
+  // const tdee = (bmr * activityMultiplier[activityLevel]).toFixed(0);
 
-  document.querySelector('.metrics p:nth-child(1) span').textContent = bmi;
-  document.querySelector('.metrics p:nth-child(3) span').textContent = bmr;
-  document.querySelector('.metrics p:nth-child(5) span').textContent = tdee;
+  document.querySelector('.metrics p:nth-child(2) span').textContent = parseInt(bmr);
+  // document.querySelector('.metrics p:nth-child(3) span').textContent = tdee;
 
-  document.getElementById('display-age').textContent = age;
+  
 
   const healthStatus = document.getElementById('health-status');
   healthStatus.textContent = bmi < 18.5 ? "Underweight" :

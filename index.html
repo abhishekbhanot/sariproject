@@ -16,7 +16,7 @@
     <!-- Name Input -->
     <div class="input-container">
       <label for="name">Name:</label>
-      <input type="text" id="name" placeholder="Enter your name" oninput="updateName()">
+      <input type="text" id="name" placeholder="Enter your name" oninput="updateName()"/>
     </div>
 
     <div class="slider-container">
@@ -30,21 +30,8 @@
     </div>
 
     <div class="input-container">
-      <label>Date of Birth: <span id="dob-display">03 / 01 / 2001</span></label>
-      <div class="dob-sliders">
-        <div>
-          <input type="range" id="dob-day" class="styled-range" min="1" max="31" value="3" oninput="updateDOB()">
-          <label for="dob-day">Day</label>
-        </div>
-        <div>
-          <input type="range" id="dob-month" class="styled-range" min="1" max="12" value="1" oninput="updateDOB()">
-          <label for="dob-month">Month</label>
-        </div>
-        <div>
-          <input type="range" id="dob-year" class="styled-range" min="1925" max="2025" value="2001" oninput="updateDOB()">
-          <label for="dob-year">Year</label>
-        </div>
-      </div>
+      <label for="dob">Enter Your Date of Birth:</label>
+      <input type="date" id="dob" oninput="calculateAge()" value="2000-01-01">
     </div>
 
     <div class="slider-container">

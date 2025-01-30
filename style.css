@@ -49,14 +49,14 @@ border-radius: 5px;
 outline: none;
 }
 #name{
-  width: 80%;
+  width: 90%;
 height: 20px;
 border-radius: 20px;
 border: transparent;text-align: center;
 
 }
 #dob{
-  width: 80%;
+  width: 90%;
   height: 20px;
   border-radius: 20px;
   border: transparent;text-align: center; 
@@ -156,10 +156,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     align-items: center;
     flex-wrap: wrap;
   }
-  .days-to-fit{
-    height: 200px;
-    width: 60%;
-  }
+  
   .card1 {
     background-color: #ffffff7e;
     border: 1px solid rgb(196, 190, 190);    border-radius: 15px;
@@ -170,7 +167,10 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
     position: relative;
   }
-
+#lastimg{
+  height: 170px;
+  margin-top: -50px;
+}
   .avatar {
     width: 80px;
     height: auto;
@@ -196,9 +196,46 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     top: 70px;
     
   }
-
-
-
+  .days-to-fit{
+    height: 200px;
+    width: 60%;
+  }
+  #smallfont{
+    font-size: 0.9rem;
+   
+  }
+#flex4{
+  height: 150px;
+  width: 100%;
+  background: transparent;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.smothie{
+  height: 150px;
+  width: 23%;
+  background-color: #ffffff7e;
+  border-radius: 20px;
+  
+}
+#shaker{
+  height: 60px;
+}
+#smalltext{
+  font-size: 0.7rem;
+  color: black;
+}
+#sub{
+  height: 25px;
+  width:50%;
+  font-size: 0.6rem;
+  border-radius: 20px;
+  font-weight: 777;
+  border: transparent;
+  margin-top: 10px;
+  background-color: #22c55e;
+}
   .metrics {
     margin-top: 15px;
   }
